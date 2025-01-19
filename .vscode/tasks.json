@@ -1,0 +1,94 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "client",
+            "type": "shell",
+            "command": "npm run dev",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "./client"
+            },
+            "group": "build"
+        },
+        {
+            "label": "comments",
+            "type": "shell",
+            "command": "npm start",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "./comments"
+            },
+            "group": "build"
+        },
+        {
+            "label": "eventbus",
+            "type": "shell",
+            "command": "npm start",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "./eventbus"
+            },
+            "group": "build"
+        },
+        {
+            "label": "moderation",
+            "type": "shell",
+            "command": "npm start",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "./moderation"
+            },
+            "group": "build"
+        },
+        {
+            "label": "posts",
+            "type": "shell",
+            "command": "npm start",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "./posts"
+            },
+            "group": "build"
+        },
+        {
+            "label": "query",
+            "type": "shell",
+            "command": "npm start",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+                "cwd": "./query"
+            },
+            "group": "build"
+        },
+        {
+            "label": "start-all",
+            "dependsOn": [
+                "client",
+                "comments",
+                "eventbus",
+                "moderation",
+                "posts",
+                "query"
+            ]
+        }
+    ]
+}
