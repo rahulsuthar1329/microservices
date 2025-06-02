@@ -25,7 +25,7 @@ function App() {
     e.preventDefault();
     if (!title) return alert("title cannot be empty!");
     try {
-      await axios.post("http://localhost:4000/posts", { title });
+      await axios.post("http://posts.com/posts/create", { title });
       await getPosts();
       setTitle("");
     } catch (error) {
@@ -35,7 +35,7 @@ function App() {
 
   const getPosts = async () => {
     try {
-      const post = await axios.get<PostType>("http://localhost:4002/posts");
+      const post = await axios.get<PostType>("http://posts.com/posts");
       setPosts(post.data);
     } catch (error) {
       console.log(error.message);
@@ -45,7 +45,7 @@ function App() {
   const postComment = async (id: string) => {
     if (!comment) return alert("comment cannot be empty!");
     try {
-      await axios.post(`http://localhost:4001/posts/${id}/comments`, {
+      await axios.post(`http://posts.com/posts/${id}/comments`, {
         id,
         content: comment,
       });
